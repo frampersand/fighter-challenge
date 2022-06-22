@@ -1,3 +1,6 @@
+## Live version  
+https://frampersand.dev/playground/shenanigans/fighter-challenge/  
+
 ## Local development/deployment
 
 npm i  

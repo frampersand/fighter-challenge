@@ -3144,7 +3144,7 @@ export const uniteDataset = [
         "displayName": {
             "en_US": "Sylveon",
         },
-        "file": "Sylveon",
+        "file": "sylveon",
         "series": "attacker",
         "color": "#f16c38",
     },

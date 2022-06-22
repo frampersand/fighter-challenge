@@ -2,7 +2,7 @@
     import Grid from '@Components/Grid';
     import Timer from '@Components/Timer';
 	import { currentRun, selectedGame, dataset } from '@Services/store';
-
+    import { SMASH_SELECTED } from '@Utils/constants';
     import {
         toTitleCase,
         getPersonalBest,
@@ -89,7 +89,6 @@
         personalBest = 0;
     }
     $: $dataset, generateNewRun();
-    // generateNewRun();
 
 </script>
 
@@ -115,7 +114,9 @@
 
 					<span> 
 						{$dataset[runIndex].displayNum} - {toTitleCase($dataset[runIndex].displayName["en_US"])}  
-						<img class="character-icon" src={`./images/${$selectedGame}/icons/${$dataset[runIndex].file}.png`} alt="">
+                        {#if $selectedGame === SMASH_SELECTED }
+						    <img class="character-icon" src={`./images/${$selectedGame}/icons/${$dataset[runIndex].file}.png`} alt="">
+                        {/if}
 					</span>
 
 					<button 
