@@ -15,12 +15,12 @@ export const shuffle = (a) => {
     return a;
 }
 
-export const getPersonalBest = () => {
-    return sessionStorage.getItem("personalBest") || 0;
+export const getPersonalBest = (game) => {
+    return sessionStorage.getItem(`personalBest${game}`) || 0;
 }
 
-export const setPersonalBest = (score) => {
-    sessionStorage.setItem("personalBest", score);
+export const setPersonalBest = (score, game) => {
+    sessionStorage.setItem(`personalBest${game}`, score);
 }
 
 export const updateDefaultGame = (game) => {

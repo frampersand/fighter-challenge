@@ -14,7 +14,7 @@
     export let playedCharacters;
     export let runIndex;
 
-    let personalBest = getPersonalBest();
+    let personalBest;
     let shownIndex;
     let topReached;
 
@@ -66,7 +66,7 @@
             topReached = playedCharacters.length;
             if (topReached > personalBest) {
                 personalBest = topReached;
-                setPersonalBest(topReached);
+                setPersonalBest(topReached, $selectedGame);
             }
         }
     };
@@ -85,10 +85,16 @@
     }
 
     const resetRecord = () => {
-        setPersonalBest(0);
+        setPersonalBest(0, $selectedGame);
         personalBest = 0;
     }
+
+    const getRecord = () => {
+        personalBest = getPersonalBest($selectedGame);
+    }
+
     $: $dataset, generateNewRun();
+    $: $dataset, getRecord();
 
 </script>
 
