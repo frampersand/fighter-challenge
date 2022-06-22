@@ -1,0 +1,20 @@
+.selector {
+    .game-selection-box{
+        display: flex;
+        justify-content: center;
+        .game{
+            display: flex;
+            img{
+                width: 90px;
+            }
+            button{
+                background-color: transparent;
+                border: none;
+            }
+            &.selected {
+                border-bottom: 1px solid #f44336;
+            }
+        }
+           
+    }
+}

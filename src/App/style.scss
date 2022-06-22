@@ -1,0 +1,16 @@
+.wrapper {
+  background-color: black;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+@font-face {
+  font-family: 'Bokuto';
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Rodin_Bokutoh_Pro_UB.ttf") format('truetype');
+}
+
+* {
+  font-family: "Bokuto";
+}
