@@ -1,6 +1,8 @@
 <script>
     import Card from '@Components/Card';
     import Grid from '@Components/Grid';
+    import { GAMELIST_TITLES } from '@Utils/constants';
+    import { selectedGame } from '@Services/store';
 
     let runIndex;
     let newPick;
@@ -13,6 +15,7 @@
 </style>
 
 <div class="layout col-12">
+    <h1> Frampersand's {GAMELIST_TITLES[$selectedGame]} fighter challenge tracker</h1>
     <div class="row justify-content-center">
         <div class="col-lg-12 col-xl-3">
             <Card 

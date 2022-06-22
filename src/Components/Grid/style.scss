@@ -5,6 +5,7 @@
     width: 320px;
     max-width: 350px;
     margin: auto;
+    padding-top: 2rem;
     .character-box{
         position: relative;
         width: 40px;
@@ -51,5 +52,16 @@
             }
         }
     }
-    padding-top: 20px;
+    @media screen and (max-width: 385px) {
+        width: 280px;
+        grid-template-columns: 56px 56px 56px 56px 56px;
+        .character-box{
+            width: 56px;
+            height: 56px;
+            .character{
+                height: 56px;
+                width: 56px;
+            }
+        }
+    }   
 }

@@ -8,6 +8,9 @@ html {
 *:after {
   box-sizing: inherit;
 }
+body{
+  background-color: #000;
+}
 
 body,
 h1,

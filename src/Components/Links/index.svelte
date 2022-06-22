@@ -6,7 +6,7 @@
 
 </style>
 
-<div class="col-6 links">
+<div class="col-12 links">
     <a href="https://www.twitch.tv/frampersand">
         <i class="fa-brands fa-twitch"></i>
     </a>

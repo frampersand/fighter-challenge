@@ -1,4 +1,15 @@
 .layout {
 	text-align: center;
 	padding-top: 2rem;
+	h1{
+		font-size: 20px;
+		color: white;
+		margin: auto;
+		width: 350px;
+	}
+	@media screen and (max-width: 385px) {
+        h1{
+			width: 280px;
+		}
+    }  
 }

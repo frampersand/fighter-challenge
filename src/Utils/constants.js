@@ -9,3 +9,8 @@ export const GAMELIST_DATASET = {
     [UNITE_SELECTED]: uniteDataset,
     [SMASH_SELECTED]: ssbDataset,
 }
+
+export const GAMELIST_TITLES = {
+    [UNITE_SELECTED]: UNITE,
+    [SMASH_SELECTED]: SMASH,
+}
