@@ -1,4 +1,6 @@
 <script>
+	import { selectedGame } from '@Services/store';
+	import { UNITE_SELECTED } from '@Utils/constants';
     export let hour = '00';
 	export let minute = '00';
 	export let second = '00';
@@ -46,7 +48,7 @@
 
 </style>
 
-<div class="timer" on:click={toggleTimer}>
+<div class="timer" on:click={toggleTimer} class:unite={$selectedGame === UNITE_SELECTED}>
     <div class="timer-title">Current run timer</div>
     <div class="timer-count">{hour}:{minute}:{second}</div>
 </div>
