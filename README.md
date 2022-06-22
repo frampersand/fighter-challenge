@@ -1,12 +1,15 @@
-For local deployment/development, run  
-** npm i **
-** npm run start:dev **
+## Local development/deployment
 
-For packaging the version ready to deploy, run  
-** npm run build **
+npm i  
+npm run start:dev
 
-Static resources on public folder  
-Built packages generated on public folder
+## Packaging the version ready to deploy  
+
+npm run build
+
+## Notes
+- Static resources go on public folder  
+- Built packages generated on public folder  
 
 
 Built using svelte-boilerplate by pankod
