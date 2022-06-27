@@ -2919,7 +2919,6 @@ export const uniteDataset = [
     },
     {
         "displayNum": "025",
-        "dlc": 1,
         "new": 0,
         "displayName": {
             "en_US": "Pikachu",

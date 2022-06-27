@@ -4,7 +4,6 @@
     import { GAMELIST_TITLES } from '@Utils/constants';
     import { selectedGame } from '@Services/store';
 
-    let runIndex;
     let newPick;
     let playedCharacters = [];
 
@@ -21,14 +20,12 @@
             <Card 
 				bind:newPick={newPick}
                 bind:playedCharacters={playedCharacters} 
-				bind:runIndex={runIndex}
 				/>
         </div>
         <div class="col-lg-12 col-xl-4">
             <Grid 
 				newPick={newPick}
 				bind:playedCharacters={playedCharacters}
-                bind:runIndex={runIndex}
 				/>
         </div>
     </div>

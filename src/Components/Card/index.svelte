@@ -1,18 +1,16 @@
 <script>
-    import Grid from '@Components/Grid';
     import Timer from '@Components/Timer';
-	import { currentRun, selectedGame, dataset } from '@Services/store';
+	import { currentRun, selectedGame, dataset, playedCharacters, runIndex } from '@Services/store';
     import { SMASH_SELECTED } from '@Utils/constants';
     import {
         toTitleCase,
         getPersonalBest,
         setPersonalBest,
         getPositionStyle,
-		shuffle
+		shuffle,
+        setRunStatus,
+        getRunStatus,
     } from '@Utils/utils';
-
-    export let playedCharacters;
-    export let runIndex;
 
     let personalBest;
     let shownIndex;
@@ -43,7 +41,7 @@
 
     const updateIndexes = (index) => {
         shownIndex = index;
-        runIndex = $currentRun[shownIndex];
+        runIndex.set($currentRun[shownIndex]);
         if (index > 0) {
             runIndexBack = $currentRun[shownIndex - 1];
         }
@@ -56,14 +54,14 @@
         let validNumber;
         do {
             validNumber = Math.floor((Math.random() * ($dataset.length)));
-        } while (playedCharacters.includes(validNumber) && playedCharacters.length != $dataset.length);
+        } while ($playedCharacters.includes(validNumber) && $playedCharacters.length != $dataset.length);
         return validNumber;
     }
 
     const checkIfPlayed = (characterIndex) => {
-        if (!playedCharacters.includes(characterIndex)) {
-            playedCharacters = [...playedCharacters, characterIndex];
-            topReached = playedCharacters.length;
+        if (!$playedCharacters.includes(characterIndex)) {
+            playedCharacters.set([...$playedCharacters, characterIndex]);
+            topReached = $playedCharacters.length;
             if (topReached > personalBest) {
                 personalBest = topReached;
                 setPersonalBest(topReached, $selectedGame);
@@ -74,8 +72,8 @@
     export const reset = () => {
         topReached = 0;
         shownIndex = 0;
-        playedCharacters = [];
-        runIndex = $currentRun[shownIndex];
+        playedCharacters.set([]);
+        runIndex.set($currentRun[shownIndex]);
         runIndexNext = $currentRun[1];
         hour = '00';
         minute = '00';
@@ -93,7 +91,26 @@
         personalBest = getPersonalBest($selectedGame);
     }
 
+    const saveRunState = () => {
+        setRunStatus($currentRun, $playedCharacters, `${hour}:${minute}:${second}`, shownIndex, $selectedGame);
+    }
+
+    const checkExistingRun = (game) => {
+        const [run, played, time, index] = getRunStatus(game);
+        console.log(getRunStatus(game));
+        console.log('index: ', index);
+        run.length && currentRun.set(run.split(',').map(function (x) { return parseInt(x, 10) }));
+        played.length && playedCharacters.set(played.split(',').map(function (x) { return parseInt(x, 10) }));
+        updateIndexes(parseInt(index));
+        topReached = $playedCharacters.length;
+        const newTime = time.split(':');
+        hour = newTime[0];
+        minute = newTime[1];
+        second = newTime[2];
+    }
+
     $: $dataset, generateNewRun();
+    $: $dataset, checkExistingRun($selectedGame);
     $: $dataset, getRecord();
 
 </script>
@@ -102,16 +119,17 @@
 
 </style>
 
+<svelte:window on:beforeunload={saveRunState}/>
 
 <div class={`randomizer-card-body ${$selectedGame}`}>
 
-    <div class={`card-character ${$selectedGame}`} style={`background-color: ${$dataset[runIndex].color}; background-image:
-        url("./images/${$selectedGame}/series/${$dataset[runIndex].series}.png")`}> <div class="character-portrait"
-        style={`background-image: url("./images/${$selectedGame}/portraits-min/${$dataset[runIndex].file}-min.png");
-        ${getPositionStyle($dataset[runIndex].position)}`}>
+    <div class={`card-character ${$selectedGame}`} style={`background-color: ${$dataset[$runIndex].color}; background-image:
+        url("./images/${$selectedGame}/series/${$dataset[$runIndex].series}.png")`}> <div class="character-portrait"
+        style={`background-image: url("./images/${$selectedGame}/portraits-min/${$dataset[$runIndex].file}-min.png");
+        ${getPositionStyle($dataset[$runIndex].position)}`}>
     </div>
     <div class="buttons">
-        <button on:click={()=> {newPick(runIndex, shownIndex-1)}}
+        <button on:click={()=> {newPick($runIndex, shownIndex-1)}}
             class:invisible={shownIndex == 0}>
             {#if shownIndex != 0}
 							<img class="character-icon" src={`./images/${$selectedGame}/icons/${$dataset[runIndexBack].file}.png`} alt="">
@@ -119,14 +137,14 @@
 					</button>
 
 					<span> 
-						{$dataset[runIndex].displayNum} - {toTitleCase($dataset[runIndex].displayName["en_US"])}  
+						{$dataset[$runIndex].displayNum} - {toTitleCase($dataset[$runIndex].displayName["en_US"])}  
                         {#if $selectedGame === SMASH_SELECTED }
-						    <img class="character-icon" src={`./images/${$selectedGame}/icons/${$dataset[runIndex].file}.png`} alt="">
+						    <img class="character-icon" src={`./images/${$selectedGame}/icons/${$dataset[$runIndex].file}.png`} alt="">
                         {/if}
 					</span>
 
 					<button 
-						on:click={() => {newPick(runIndex, shownIndex+1)}}
+						on:click={() => {newPick($runIndex, shownIndex+1)}}
 						class:invisible={shownIndex == $currentRun.length - 1}> 
 						{#if shownIndex < $currentRun.length - 1}
 							<img class="character-icon" src={`./images/${$selectedGame}/icons/${$dataset[runIndexNext].file}.png`} alt="">
