@@ -2896,6 +2896,10 @@ export const uniteDataset = [
         "file": "venusaur",
         "series": "attacker",
         "color": "#f16c38",
+        "position": {
+            "backgroundSize": "140%",
+            "backgroundPosition": "center 80%"
+        }
     },
     {
         "displayNum": "006",
@@ -2906,6 +2910,10 @@ export const uniteDataset = [
         "file": "charizard",
         "series": "allrounder",
         "color": "#ce5fd3",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center"
+        }
     },
     {
         "displayNum": "009",
@@ -2916,6 +2924,10 @@ export const uniteDataset = [
         "file": "blastoise",
         "series": "defender",
         "color": "#aced5b",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 30%"
+        }
     },
     {
         "displayNum": "025",
@@ -2926,6 +2938,10 @@ export const uniteDataset = [
         "file": "pikachu",
         "series": "attacker",
         "color": "#f16c38",
+        "position": {
+            "backgroundSize": "90%",
+            "backgroundPosition": "80% 60%"
+        }
     },
     {
         "displayNum": "038",
@@ -2936,6 +2952,10 @@ export const uniteDataset = [
         "file": "ninetales",
         "series": "attacker",
         "color": "#f16c38",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 20%"
+        }
     },
     {
         "displayNum": "040",
@@ -2956,6 +2976,10 @@ export const uniteDataset = [
         "file": "machamp",
         "series": "allrounder",
         "color": "#ce5fd3",
+        "position": {
+            "backgroundSize": "150%",
+            "backgroundPosition": "50% 10%"
+        }
     },
     {
         "displayNum": "080",
@@ -2966,6 +2990,10 @@ export const uniteDataset = [
         "file": "slowbro",
         "series": "defender",
         "color": "#aced5b",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 70%"
+        }
     },
     {
         "displayNum": "094",
@@ -2976,6 +3004,10 @@ export const uniteDataset = [
         "file": "gengar",
         "series": "speedster",
         "color": "#29a5e3",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 70%"
+        }
     },
     {
         "displayNum": "242",
@@ -2986,6 +3018,10 @@ export const uniteDataset = [
         "file": "blissey",
         "series": "supporter",
         "color": "#fecc51",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 10%"
+        }
     },
     {
         "displayNum": "122",
@@ -3006,6 +3042,10 @@ export const uniteDataset = [
         "file": "snorlax",
         "series": "defender",
         "color": "#aced5b",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 80%"
+        }
     },
     {
         "displayNum": "149",
@@ -3016,6 +3056,10 @@ export const uniteDataset = [
         "file": "dragonite",
         "series": "allrounder",
         "color": "#ce5fd3",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 60%"
+        }
     },
     {
         "displayNum": "184",
@@ -3056,6 +3100,10 @@ export const uniteDataset = [
         "file": "gardevoir",
         "series": "attacker",
         "color": "#f16c38",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 10%"
+        }
     },
     {
         "displayNum": "359",
@@ -3066,6 +3114,10 @@ export const uniteDataset = [
         "file": "absol",
         "series": "speedster",
         "color": "#29a5e3",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center -3%"
+        }
     },
     {
         "displayNum": "445",
@@ -3076,6 +3128,10 @@ export const uniteDataset = [
         "file": "garchomp",
         "series": "allrounder",
         "color": "#ce5fd3",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 0%"
+        }
     },
     {
         "displayNum": "448",
@@ -3086,6 +3142,10 @@ export const uniteDataset = [
         "file": "lucario",
         "series": "allrounder",
         "color": "#ce5fd3",
+        "position": {
+            "backgroundSize": "130%",
+            "backgroundPosition": "center 0%"
+        }
     },
     {
         "displayNum": "558",
@@ -3106,6 +3166,10 @@ export const uniteDataset = [
         "file": "delphox",
         "series": "attacker",
         "color": "#f16c38",
+        "position": {
+            "backgroundSize": "130%",
+            "backgroundPosition": "center 50%"
+        }
     },
     {
         "displayNum": "658",
@@ -3176,6 +3240,10 @@ export const uniteDataset = [
         "file": "decidueye",
         "series": "attacker",
         "color": "#f16c38",
+        "position": {
+            "backgroundSize": "130%",
+            "backgroundPosition": "center"
+        }
     },
     {
         "displayNum": "763",
@@ -3196,6 +3264,10 @@ export const uniteDataset = [
         "file": "zeraora",
         "series": "speedster",
         "color": "#29a5e3",
+        "position": {
+            "backgroundSize": "140%",
+            "backgroundPosition": "center 30%"
+        }
     },
     {
         "displayNum": "815",
@@ -3206,6 +3278,10 @@ export const uniteDataset = [
         "file": "cinderace",
         "series": "attacker",
         "color": "#f16c38",
+        "position": {
+            "backgroundSize": "140%",
+            "backgroundPosition": "center 60%"
+        }
     },
     {
         "displayNum": "820",
@@ -3226,6 +3302,10 @@ export const uniteDataset = [
         "file": "eldegoss",
         "series": "supporter",
         "color": "#fecc51",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 70%"
+        }
     },
     {
         "displayNum": "845",
@@ -3246,5 +3326,9 @@ export const uniteDataset = [
         "file": "duraludon",
         "series": "attacker",
         "color": "#f16c38",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 20%"
+        }
     },
 ];

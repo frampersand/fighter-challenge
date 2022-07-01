@@ -49,11 +49,15 @@
             background-repeat: no-repeat;
             width: 100%;
             height: 100%;
+            position: relative;
+            z-index: 10;
         }
         .character-icon{
             width: 18px;
         }
         .buttons{
+            position: relative;
+            z-index: 10;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -69,6 +73,64 @@
         }
         &.smash{
             background-repeat: no-repeat;
+        }
+        &.unite{
+                overflow: hidden;
+                position: relative;
+                padding: 0;
+                background: linear-gradient(to left top, #ec014b, #06cced);
+                isolation: isolate;
+                .character-portrait{
+                    background-size: cover;
+                }
+            
+                &::before, &::after {
+                    position: absolute;
+                    top: 0; right: 0; bottom: 0; left: 0;
+                    z-index: 0;
+                    content: ''
+                }
+            
+                &::before {
+                    background: 
+                        linear-gradient(30deg, #777, #000), 
+                        repeating-linear-gradient(30deg, #000, #999, #000 5%), 
+                        repeating-linear-gradient(-60deg, #000, #999, #000 5%);
+                    background-blend-mode: screen, difference;
+                    filter: contrast(19);
+                    mix-blend-mode: overlay;
+                }
+            
+                &::after {
+                    background: linear-gradient(220deg, #251967, #ca84a0);
+                    mix-blend-mode: multiply
+                }
+                &.speedster{
+                    &::after {
+                        background: linear-gradient(220deg, #30a5e3, #eaebff);
+                    }
+                }
+                &.defender{
+                    &::after {
+                        background: linear-gradient(220deg, #aced5b, #acb458);
+                    }
+                }
+                &.attacker{
+                    &::after {
+                        background: linear-gradient(220deg, #f16c38, #ca84a0);
+                    }
+                }
+                &.supporter{
+                    &::after {
+                        background: linear-gradient(220deg, #fbcc51, #ffc107);
+                    }
+                }
+                &.allrounder{
+                    &::after {
+                        background: linear-gradient(220deg, #ce5fd3, #ca84a0);
+                    }
+                }
+
         }
 
     }

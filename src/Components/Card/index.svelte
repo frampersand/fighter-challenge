@@ -123,10 +123,15 @@
 
 <div class={`randomizer-card-body ${$selectedGame}`}>
 
-    <div class={`card-character ${$selectedGame}`} style={`background-color: ${$dataset[$runIndex].color}; background-image:
-        url("./images/${$selectedGame}/series/${$dataset[$runIndex].series}.png")`}> <div class="character-portrait"
-        style={`background-image: url("./images/${$selectedGame}/portraits-min/${$dataset[$runIndex].file}-min.png");
-        ${getPositionStyle($dataset[$runIndex].position)}`}>
+    <div 
+        class={`card-character ${$selectedGame} ${$dataset[$runIndex].series}`} 
+        style={`background-color: ${$dataset[$runIndex].color}; background-image:
+        url("./images/${$selectedGame}/series/${$dataset[$runIndex].series}.png")`}
+        > 
+        <div class="character-portrait"
+            style={`background-image: url("./images/${$selectedGame}/portraits-min/${$dataset[$runIndex].file}-min.png");
+            ${getPositionStyle($dataset[$runIndex].position)}`}
+        >
     </div>
     <div class="buttons">
         <button on:click={()=> {newPick($runIndex, shownIndex-1)}}
