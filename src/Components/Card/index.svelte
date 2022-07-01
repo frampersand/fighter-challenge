@@ -127,7 +127,13 @@
         class={`card-character ${$selectedGame} ${$dataset[$runIndex].series}`} 
         style={`background-color: ${$dataset[$runIndex].color}; background-image:
         url("./images/${$selectedGame}/series/${$dataset[$runIndex].series}.png")`}
+        >
+        <div 
+            class={`series ${$dataset[$runIndex].series}`} 
+            style={`background-color: ${$dataset[$runIndex].color}; background-image:
+            url("./images/${$selectedGame}/series/${$dataset[$runIndex].series}.png")`}
         > 
+        </div>
         <div class="character-portrait"
             style={`background-image: url("./images/${$selectedGame}/portraits-min/${$dataset[$runIndex].file}-min.png");
             ${getPositionStyle($dataset[$runIndex].position)}`}

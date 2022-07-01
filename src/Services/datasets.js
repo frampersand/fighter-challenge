@@ -2911,8 +2911,8 @@ export const uniteDataset = [
         "series": "allrounder",
         "color": "#ce5fd3",
         "position": {
-            "backgroundSize": "cover",
-            "backgroundPosition": "center"
+            "backgroundSize": "90%",
+            "backgroundPosition": "110% 10%"
         }
     },
     {
@@ -2940,7 +2940,7 @@ export const uniteDataset = [
         "color": "#f16c38",
         "position": {
             "backgroundSize": "90%",
-            "backgroundPosition": "80% 60%"
+            "backgroundPosition": "110% 60%"
         }
     },
     {
@@ -3043,8 +3043,8 @@ export const uniteDataset = [
         "series": "defender",
         "color": "#aced5b",
         "position": {
-            "backgroundSize": "cover",
-            "backgroundPosition": "center 80%"
+            "backgroundSize": "110%",
+            "backgroundPosition": "center 70%"
         }
     },
     {
@@ -3241,7 +3241,7 @@ export const uniteDataset = [
         "series": "attacker",
         "color": "#f16c38",
         "position": {
-            "backgroundSize": "130%",
+            "backgroundSize": "145%",
             "backgroundPosition": "center"
         }
     },
@@ -3316,6 +3316,10 @@ export const uniteDataset = [
         "file": "cramorant",
         "series": "attacker",
         "color": "#f16c38",
+        "position": {
+            "backgroundSize": "cover",
+            "backgroundPosition": "center 20%"
+        }
     },
     {
         "displayNum": "884",
